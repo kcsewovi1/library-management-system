@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management</h1>
+        <div id="options">
+            <button id="registerBtn">Register</button>
+            <button id="addBookBtn">Add Book</button>
+            <button id="deleteBookBtn">Delete Book</button>
+            <button id="updateBookBtn">Update Book</button>
+            <button id="viewBooksBtn">View Books</button>
+        </div>
+        
+        <form id="registerForm" class="hidden">
+            <h2>Register</h2>
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+
+        <form id="addBookForm" class="hidden">
+            <h2>Add Book</h2>
+            <div class="form-group">
+                <input type="number" name="user_id" placeholder="Your User ID" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="title" placeholder="Title" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="author" placeholder="Author" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="genre" placeholder="Genre" required>
+            </div>
+            <div class="form-group">
+                <input type="date" name="published_date" placeholder="Published Date" required>
+            </div>
+            <button type="submit">Add Book</button>
+        </form>
+
+        <form id="deleteBookForm" class="hidden">
+            <h2>Delete Book</h2>
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="id" placeholder="Book ID" required>
+            </div>
+            <button type="submit">Delete Book</button>
+        </form>
+
+        <form id="updateBookForm" class="hidden">
+            <h2>Update Book</h2>
+            <div class="form-group">
+                <input type="number" name="user_id" placeholder="Your User ID" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="id" placeholder="Book ID" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="title" placeholder="New Title">
+            </div>
+            <div class="form-group">
+                <input type="text" name="author" placeholder="New Author">
+            </div>
+            <div class="form-group">
+                <input type="text" name="genre" placeholder="New Genre">
+            </div>
+            <button type="submit">Update Book</button>
+        </form>
+
+        <form id="viewBooksForm" class="hidden">
+            <h2>View Books</h2>
+            <div class="form-group">
+                <input type="number" name="user_id" placeholder="Your User ID" required>
+            </div>
+            <button type="submit">View Books</button>
+            <div id="books"></div>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
