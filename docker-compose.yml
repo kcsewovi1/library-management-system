@@ -1,0 +1,33 @@
+name: library-app
+services:
+  app:
+    container_name: node-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    depends_on:
+      - mysql 
+
+  mysql:
+    restart: always
+    networks:
+      - app-network
+    image: bitnami/mysql:latest
+    environment:
+      - MYSQL_USER=sewoviuser1
+      - MYSQL_PASSWORD=sewoviuser1
+      - MYSQL_DATABASE=library
+      - MYSQL_ROOT_USER=sewoviroot
+      - MYSQL_ROOT_PASSWORD=sewoviroot
+    volumes:
+      - ./mysql:/bitnami/mysql/data
+      - ./db:/docker-entrypoint-startdb.d
+    ports:
+      - 3306:3306
+
+networks:
+  app-network:

@@ -133,7 +133,7 @@ app.delete('/deleteBook', (req, res) => {
 });
 
 const server = app.listen(3000, () => {
-    console.log('Server started on port 6000');
+    console.log('Server started on port 3000');
 });
 
 process.on('SIGINT', () => {
